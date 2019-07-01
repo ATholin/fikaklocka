@@ -1,6 +1,6 @@
-# Fika Klocka  
+# Fikaklocka  
 
-Fika klockan tells you when its time for fika. Because you cant miss fika!!
+Fikaklockan tells you when its time for fika. Because you cant miss fika!!
 
 #### Features
 
