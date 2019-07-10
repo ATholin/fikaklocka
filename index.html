@@ -1,108 +1,113 @@
-<head>
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-   <title>Fikaklocka</title>
-   <meta property="og:title" content="Fikaklocka" />
-   <meta property="og:description" 
-  content="Fika är det viktigaste målet på dagen. Missa inte fikat." />
-   <meta property="og:locale" content="sv_SE" />
-   <meta property="og:type" content="fika.klocka" />
-   <meta property="og:url" content="https://fika.atholin.se/" />
-   <meta property="og:image" content="https://fika.atholin.se/ABB_logo_red.svg" />
-   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<html lang="sv">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="Description" content="Fika är det viktigaste målet på dagen. Missa inte fikat.">
+      <title>Fikaklocka</title>
+      <meta property="og:title" content="Fikaklocka" />
+      <meta property="og:description" 
+   content="Fika är det viktigaste målet på dagen. Missa inte fikat." />
+      <meta property="og:locale" content="sv_SE" />
+      <meta property="og:type" content="fika.klocka" />
+      <meta property="og:url" content="https://fika.atholin.se/" />
+      <meta property="og:image" content="https://fika.atholin.se/ABB_logo_red.svg" />
+      <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
-   <style>
-      @font-face {
-         font-family: ABBVoice;
-         src: url(ABBVoice_W_Md.ttf);
-      }
-      @font-face {
-         font-family: ABBVoice;
-         src: url(ABBVoice_W_Bd.ttf);
-         font-weight: 700;
-      }
-      body {
-         font-family: 'ABBVoice';
-      }
-      .heropattern {
-         background-color: #ffffff;
-         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffb1b6' fill-opacity='0.75'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      }
-      #fika{
-      font-size:150px;
-      color:#ff000f;
-      }
-      #fika.ja {
-         font-size:150px;
-         color:#007a33;
-      }
-      #fika.nej {
+      <style>
+         @font-face {
+            font-family: ABBVoice;
+            src: url(ABBVoice_W_Md.ttf);
+         }
+         @font-face {
+            font-family: ABBVoice;
+            src: url(ABBVoice_W_Bd.ttf);
+            font-weight: 700;
+         }
+         body {
+            font-family: 'ABBVoice';
+         }
+         .heropattern {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffb1b6' fill-opacity='0.75'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+         }
+         #fika{
          font-size:150px;
          color:#ff000f;
-      }
+         }
+         #fika.ja {
+            font-size:150px;
+            color:#007a33;
+         }
+         #fika.nej {
+            font-size:150px;
+            color:#ff000f;
+         }
 
-      #fika.nejm {
-         font-size:75px;
-         color:#ffae00;
-      }
-   </style>
-</head>
-<body class="heropattern">
-   <div class="px-8 relative h-full flex flex-col items-center justify-center max-w-32">
-      <div class="absolute top-0 left-0 m-6 flex items-center">
-         <img src="ABB_logo_red.svg" alt="ABB Logo" class="h-8">
-         <span class="ml-5 text-xl font-bold">Fikaklocka</span>
-      </div>
-      <div>
-         <h1 class="ml-6 mb-6 text-2xl sm:text-4xl font-bold text-gray-700">
-            Är det fika? ☕
-         </h1>
-         <div class="bg-gray-200 rounded-lg shadow-xl text-5xl px-16 py-4 sm:px-32 text-center hover:bg-gray-300">
-            <p id="fika" class="nej">NEJ</p>
+         #fika.nejm {
+            font-size:75px;
+            color:#ffae00;
+         }
+      </style>
+   </head>
+   <body class="heropattern">
+      <div class="px-8 relative h-full flex flex-col items-center justify-center max-w-32">
+         <div class="absolute top-0 left-0 m-6 flex items-center">
+            <img src="ABB_logo_red.svg" alt="ABB Logo" class="h-8">
+            <span class="ml-5 text-xl font-bold">Fikaklocka</span>
+         </div>
+         <div>
+            <h1 class="ml-6 mb-6 text-2xl sm:text-4xl font-bold text-gray-700">
+               Är det fika? ☕
+            </h1>
+            <div class="bg-gray-200 rounded-lg shadow-xl text-5xl px-16 py-4 sm:px-32 text-center hover:bg-gray-300">
+               <p id="fika" class="nej">NEJ</p>
+            </div>
+         </div>
+         <div class="absolute bottom-0 text-center mb-5">
+               <p>mastermind: Axel Draws 😎</p>
+               <p>epic gamer design: AT 🔥</p>
          </div>
       </div>
-      <div class="absolute bottom-0 text-center mb-5">
-            <p>mastermind: Axel Draws 😎</p>
-            <p>epic gamer design: AT 🔥</p>
-      </div>
-   </div>
-</body>
-<script>
 
-const date = new Date()
+      <script>
 
-fika();
-
-window.setInterval(function(){
-        fika();
-}, 1000);
-
-function fika(){
-   
-   const h = date.getHours();
-   const m = date.getMinutes();
-   const s = date.getSeconds();
-   const fika = document.querySelector('#fika');
-   fika.className = "";
-
-   if(h == 10 && m < 20 || h == 15 && m < 20){
-      fika.classList.add('ja');
-      fika.textContent = "JA";
-   }else if(h==12){
-      fika.classList.add('nejm');
-      fika.textContent = "Nej men det är lunch mina vänner";
-   }else if(h == 9 && m >= 55 || h == 14 && m >= 55){
-      if(m == 59){
-         fika.classList.add('nejm');
-         fika.textContent = `Nej men om ${60 - s} sekunder`;
-      }else{
-         fika.classList.add('nejm');
-         fika.textContent = `Nej men om ${60 - m} minuter`;
-      }
-   }
-   
-   else {
-      fika.classList.add('nej');
-      fika.textContent = `NEJ`;
-   }
-}
-</script>
+         const date = new Date()
+         
+         fika();
+         
+         window.setInterval(function(){
+                 fika();
+         }, 1000);
+         
+         function fika(){
+            
+            const h = date.getHours();
+            const m = date.getMinutes();
+            const s = date.getSeconds();
+            const fika = document.querySelector('#fika');
+            fika.className = "";
+         
+            if(h == 10 && m < 20 || h == 15 && m < 20){
+               fika.classList.add('ja');
+               fika.textContent = "JA";
+            }else if(h==12){
+               fika.classList.add('nejm');
+               fika.textContent = "Nej men det är lunch mina vänner";
+            }else if(h == 9 && m >= 55 || h == 14 && m >= 55){
+               if(m == 59){
+                  fika.classList.add('nejm');
+                  fika.textContent = `Nej men om ${60 - s} sekunder`;
+               }else{
+                  fika.classList.add('nejm');
+                  fika.textContent = `Nej men om ${60 - m} minuter`;
+               }
+            }
+            
+            else {
+               fika.classList.add('nej');
+               fika.textContent = `NEJ`;
+            }
+         }
+      </script>
+   </body>
+</html>
