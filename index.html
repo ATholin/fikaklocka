@@ -49,60 +49,71 @@
    </head>
    <body class="heropattern h-screen">
       <div class="px-8 relative h-full flex flex-col items-center justify-center max-w-32">
-         <div class="absolute top-0 left-0 m-6 flex items-center">
-            <img src="ABB_logo_red.svg" alt="ABB Logo" class="h-8">
-            <span class="ml-5 text-xl font-bold">Fikaklocka</span>
+         <div class="absolute top-0 left-0 right-0 m-6 flex justify-between">
+            <div>
+               <div class="flex items-center">
+                  <img src="ABB_logo_red.svg" alt="ABB Logo" class="h-8">
+                  <span class="ml-5 text-xl font-bold">Fikaklocka</span>
+               </div>
+            </div>
+            <div>
+               <div class="bg-white hover:bg-gray-100 cursor-pointer rounded shadow-lg hover:shadow-xl font-bold text-gray-700 px-5 py-2">
+                  <p id="time"></p>
+               </div>
+            </div>
          </div>
          <div>
-            <h1 class="ml-6 mb-6 text-2xl sm:text-4xl font-bold text-gray-700">
+            <h1 class="ml-6 mb-6 text-lg sm:text-3xl font-bold text-gray-700">
                Är det fika? ☕
             </h1>
-            <div class="bg-gray-200 rounded-lg shadow-xl text-2xl sm:text-5xl px-16 py-4 sm:px-32 text-center hover:bg-gray-300">
+            <div class="bg-gray-200 cursor-default rounded-lg shadow-xl text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-6xl px-16 py-4 sm:px-32 text-center hover:bg-gray-300">
                <p id="fika" class="nej">NEJ</p>
             </div>
          </div>
          <div class="absolute bottom-0 text-center mb-5">
-               <p>mastermind: Axel Draws 😎</p>
-               <p>epic gamer design: AT 🔥</p>
+            <p>mastermind: Axel Draws 😎</p>
+            <p>epic gamer design: AT 🔥</p>
          </div>
       </div>
 
       <script>
 
-         const date = new Date()
-         
+         let date = new Date();
+
          fika();
+                  
+         setInterval(fika, 1000);
          
-         window.setInterval(function(){
-                 fika();
-         }, 1000);
-         
-         function fika(){
-            
+         function fika() {
+            date = new Date();
+
+            console.log(`Update date: ${date.toLocaleTimeString('sv-SE')}`);
+            const time = document.querySelector('#time');
+            time.textContent = date.toLocaleTimeString('sv-SE');
+
             const h = date.getHours();
             const m = date.getMinutes();
             const s = date.getSeconds();
             const fika = document.querySelector('#fika');
-            fika.className = "";
          
             if(h == 10 && m < 20 || h == 15 && m < 20){
-               fika.classList.add('ja');
+               fika.className = "ja";
                fika.textContent = "JA";
             }else if(h==12){
-               fika.classList.add('nejm');
+               fika.className = "nejm";
                fika.textContent = "Nej men det är lunch mina vänner";
             }else if(h == 9 && m >= 55 || h == 14 && m >= 55){
                if(m == 59){
-                  fika.classList.add('nejm');
+                  fika.className = "nejm";
                   fika.textContent = `Nej men om ${60 - s} sekunder`;
                }else{
-                  fika.classList.add('nejm');
+                  fika.className = "nejm";
                   fika.textContent = `Nej men om ${60 - m} minuter`;
                }
             }
             
             else {
-               fika.classList.add('nej');
+               fika.className = "nej";
                fika.textContent = `NEJ`;
             }
          }
