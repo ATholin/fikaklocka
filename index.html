@@ -28,6 +28,14 @@
          body {
             font-family: 'ABBVoice';
          }
+         video {
+            object-fit: fill;
+            width:100%;
+            height: 150%;
+            top:-20%;
+            z-index: -99;
+         }
+
          #fikafest {
          position: fixed;
          right: 0;
@@ -55,11 +63,14 @@
       </style>
    </head>
    <body class="heropattern h-screen">
-      <div class="px-8 relative h-full flex flex-col items-center justify-center max-w-32">
-         <video autoplay muted loop class="fixed right-0 bottom-0 min-w-full min-h-full hidden" id="fikafest" style="z-index: -99;">
-            <source src="fikafest.mp4" type="video/mp4">
+      <div class="px-8 relative h-full flex flex-col items-center justify-center">
+         <video autoplay muted loop class="fixed right-0 bottom-0 min-w-full min-h-full hidden" id="fikafest">
+            <source src="rave.webm" type="video/webm">
          </video>
-            
+         <div class="tenor-gif-embed fixed right-0 bottom-0 min-w-full min-h-full hidden" data-postid="14277868" data-share-method="host" data-width="100%" data-aspect-ratio="2.376237623762376"><a href="https://tenor.com/view/crab-rave-crab-dance-gif-14277868">Crab Rave Dance GIF</a> from <a href="https://tenor.com/search/crabrave-gifs">Crabrave GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+         <div class="absolute w-full h-full overflow-hidden hidden" id="fredag" style="z-index: -90">
+            <img style="opacity: 0.07;" class="w-full overflow-hidden" src="https://i.kym-cdn.com/entries/icons/facebook/000/028/230/fredag.jpg" alt="det är fredag mina bekanta">
+         </div>
          <div class="absolute top-0 left-0 right-0 m-6 flex justify-between">
             <div>
                <div class="flex items-center">
@@ -90,12 +101,9 @@
       <script>
 
          let date = new Date();
-
-         fika();
-                  
-         setInterval(fika, 1000);
          
-         function fika() {
+         const fika = () => {
+            fredagfrågetecken("???");
             date = new Date();
 
             console.log(`Update date: ${date.toLocaleTimeString('sv-SE')}`);
@@ -112,6 +120,9 @@
             if(h == 10 && m < 20 || h == 15 && m < 20){
                fika.className = "ja";
                fika.textContent = "JA";
+               if (ärefredag()) {
+                  fika.textContent = "FREADGSFIKA MINA BEKANTA";
+               }
                fikafest.classList.remove('hidden');
             }else if(h==12){
                fika.className = "nejm";
@@ -132,10 +143,27 @@
             
             else {
                fika.className = "nej";
-               fika.textContent = `NEJ`;
+               fika.textContent = `NEJ 😰😱😭`;
                fikafest.classList.add('hidden');
             }
          }
+
+         const ärefredag = () => date.getDay() == 5;
+         const kanskelördag = () => date.getDay() == 6;
+
+         const fredagfrågetecken = FRÅGETECKENFRÅGETECKENFRÅGETECKEN => {
+            const freitag = document.querySelector('#fredag');
+            if (date.getDay() == 5) {
+               console.log("DET ÄR FREDAG MINA BEKANTA")
+               freitag.classList.remove('hidden');
+            } else {
+               if (!freitag.classList.contains('hidden')) {
+                  freitag.classList.add('hidden');
+               }
+            }
+         }
+                           
+         setInterval(fika, 1000);
       </script>
    </body>
 </html>
