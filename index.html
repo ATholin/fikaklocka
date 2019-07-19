@@ -93,9 +93,6 @@
          <div class="absolute w-full h-full overflow-hidden hidden" id="fredag" style="z-index: -90">
             <img style="opacity: 0.07;" class="w-full overflow-hidden" src="https://i.kym-cdn.com/entries/icons/facebook/000/028/230/fredag.jpg" alt="det är fredag mina bekanta">
          </div>
-         <div class="absolute w-full h-full overflow-hidden hidden" id="lasergame" style="z-index: -90">
-            <img style="opacity: 0.15;" class="w-full h-full overflow-hidden" src="https://media-cdn.tripadvisor.com/media/photo-s/12/f8/cc/52/lasergame.jpg" alt="lasergame sick uye">
-         </div>
          
          <div class="absolute top-0 left-0 right-0 m-6 flex justify-between">
             <div>
@@ -104,7 +101,10 @@
                   <span class="ml-5 text-xl font-bold">Fikaklocka</span>
                </div>
             </div>
-            <div>
+            <div class="flex">
+               <div onclick="alert('Sluta kolla på fikaklockan och tillbaks till jobbet Merrit! 😠')" class="cursor-pointer mr-3 bg-white hover:bg-gray-200 cursor-pointer rounded shadow-lg hover:shadow-xl font-bold text-gray-700 px-5 py-2">
+                  Men Nurå?
+               </div>
                <div class="bg-white hover:bg-gray-100 cursor-pointer rounded shadow-lg hover:shadow-xl font-bold text-gray-700 px-5 py-2">
                   <p id="time"></p>
                </div>
@@ -146,7 +146,6 @@
             fikafråga.classList.add('text-gray-700');
 
             fredagfrågetecken("???");
-            LASERGAME("???");
             if (LÖRDAGELLERSÖNDAG()) return;
          
             if(h == 10 && m < 20 || h == 15 && m < 20){
@@ -195,23 +194,6 @@
                freitag.classList.remove('hidden');
             } else {
                if (!freitag.classList.contains('hidden')) {
-                  freitag.classList.add('hidden');
-               }
-            }
-         }
-
-         const LASERGAME = FRÅGETECKENFRÅGETECKENFRÅGETECKEN => {
-            const lasergame = document.querySelector('#lasergame');
-            const day = 18;
-            const month = 6;
-            console.log(date.getMonth())
-            if (date.getDate() == day && date.getMonth() == month) {
-               lasergame.classList.remove('hidden');
-               document.querySelector("#fika-container").classList.add("sicklasereffect")
-            } else {
-               document.querySelector("#fika-container").classList.remove("sicklasereffect")
-
-               if (!lasergame.classList.contains('hidden')) {
                   freitag.classList.add('hidden');
                }
             }
